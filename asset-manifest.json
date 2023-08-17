@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/Kushal-1234/research-group-app/static/css/main.bd3375fe.css",
-    "main.js": "/Kushal-1234/research-group-app/static/js/main.7fedef8f.js",
-    "static/js/787.98417764.chunk.js": "/Kushal-1234/research-group-app/static/js/787.98417764.chunk.js",
-    "static/media/bg1.jpg": "/Kushal-1234/research-group-app/static/media/bg1.7aa91e04e9167d9ddb1f.jpg",
-    "static/media/bg2.jpg": "/Kushal-1234/research-group-app/static/media/bg2.3f90836c433606b96e05.jpg",
-    "static/media/Poppins-Regular.ttf": "/Kushal-1234/research-group-app/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
-    "static/media/Poppins-Medium.ttf": "/Kushal-1234/research-group-app/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
-    "static/media/Poppins-SemiBold.ttf": "/Kushal-1234/research-group-app/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
-    "index.html": "/Kushal-1234/research-group-app/index.html",
-    "main.bd3375fe.css.map": "/Kushal-1234/research-group-app/static/css/main.bd3375fe.css.map",
-    "main.7fedef8f.js.map": "/Kushal-1234/research-group-app/static/js/main.7fedef8f.js.map",
-    "787.98417764.chunk.js.map": "/Kushal-1234/research-group-app/static/js/787.98417764.chunk.js.map"
+    "main.css": "/research-group-app/static/css/main.b0413192.css",
+    "main.js": "/research-group-app/static/js/main.5bbe3d93.js",
+    "static/js/787.98417764.chunk.js": "/research-group-app/static/js/787.98417764.chunk.js",
+    "static/media/bg1.jpg": "/research-group-app/static/media/bg1.7aa91e04e9167d9ddb1f.jpg",
+    "static/media/defaultProfile.png": "/research-group-app/static/media/defaultProfile.9f4216a5681671b0bbb5.png",
+    "static/media/profile1.jpg": "/research-group-app/static/media/profile1.bb68e1b56821a7a484d6.jpg",
+    "static/media/profile2.jpg": "/research-group-app/static/media/profile2.d9ae5593579cde1c7805.jpg",
+    "static/media/Poppins-Regular.ttf": "/research-group-app/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "static/media/Poppins-Medium.ttf": "/research-group-app/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
+    "static/media/Poppins-SemiBold.ttf": "/research-group-app/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
+    "index.html": "/research-group-app/index.html",
+    "main.b0413192.css.map": "/research-group-app/static/css/main.b0413192.css.map",
+    "main.5bbe3d93.js.map": "/research-group-app/static/js/main.5bbe3d93.js.map",
+    "787.98417764.chunk.js.map": "/research-group-app/static/js/787.98417764.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bd3375fe.css",
-    "static/js/main.7fedef8f.js"
+    "static/css/main.b0413192.css",
+    "static/js/main.5bbe3d93.js"
   ]
 }
