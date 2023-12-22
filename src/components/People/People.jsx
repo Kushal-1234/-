@@ -85,6 +85,7 @@ const People = () => {
         >
           <div className="people-main__card__imageContainer">
             <img
+              alt=""
               src={item?.img ? item?.img : defaultProfile}
               className="people-main__card__imageContainer__image"
             />

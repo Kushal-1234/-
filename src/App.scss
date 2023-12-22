@@ -17,69 +17,15 @@ body {
   height: 100%;
 }
 
-.hover {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  padding: 0.5rem;
-  cursor: pointer;
-  border-bottom: 3px solid transparent;
-  font-size: 13px;
-  &:hover {
-    font-weight: 600;
-  }
-}
-
-.active {
-  border-bottom: 3px solid steelblue;
-  font-weight: 600;
-}
-
 .app {
   height: 100%;
   width: 100%;
-  transition: all 0.5s ease;
-  position: relative;
-
-  &__backgroundImage {
-    height: 100%;
-    width: 100%;
-    background-image: url(./assets/images/bg3.jpeg);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    position: fixed;
-    overflow: hidden;
-    animation: zoomInOut ease 8s infinite alternate;
-  }
-  &__backgroundImage::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(transparent 20%, rgb(0, 0, 0) 80%);
-  }
-
+  overflow-x: hidden;
   &__headerContainer {
-    position: absolute;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 0;
+    height: 25%;
   }
   &__contentContainer {
-    position: relative;
-    background: #fff;
-  }
-
-  @keyframes zoomInOut {
-    0% {
-      background-size: 110% 110%;
-    }
-    100% {
-      background-size: 100% 100%;
-    }
+    height: 75%;
+    overflow: auto;
   }
 }

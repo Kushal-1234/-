@@ -1,8 +1,20 @@
 .publications-main {
-  padding: 2rem 10rem;
+  position: relative;
+  width: 80%;
+  margin: 20px auto;
   &__title {
-    font-size: 1.8rem;
+    font-size: 28px;
     font-weight: bold;
     padding: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjustments for mobile devices */
+  .publications-main {
+    width: 90%;
+    &__title {
+      font-size: 22px;
+    }
   }
 }

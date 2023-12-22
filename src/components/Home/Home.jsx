@@ -31,6 +31,7 @@ const Home = () => {
       <div className="home-main__content">
         <div className="home-main__content__imageContainer">
           <img
+            alt=""
             src={aboutPI?.img ? aboutPI?.img : defaultProfile}
             className="home-main__content__imageContainer__image"
           />

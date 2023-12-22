@@ -1,17 +1,127 @@
-import React, { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { IconButton, Menu, MenuItem, styled } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Close } from "@mui/icons-material";
 import "./Header.scss";
 
-const Header = ({ isSticky, handleActiveNav, headerRef }) => {
+const menuItem = [
+  "Home",
+  "News",
+  "Research",
+  "Publications",
+  "Software",
+  "Teaching",
+  "People",
+  "Positions",
+];
+
+const StyledMenu = styled((props) => (
+  <Menu
+    disableScrollLock={true}
+    elevation={0}
+    anchorOrigin={{
+      vertical: "bottom",
+      horizontal: "right",
+    }}
+    transformOrigin={{
+      vertical: "top",
+      horizontal: "right",
+    }}
+    {...props}
+  />
+))(({ theme }) => ({
+  "& .MuiPaper-root": {
+    borderRadius: 6,
+    minWidth: "12rem",
+    backgroundColor: "rgba(0,0,0,0.9)",
+    color: "#fff",
+    boxShadow:
+      "rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px",
+    "& .MuiMenu-list": {
+      padding: "4px 0",
+      color: "#fff",
+    },
+    "& .Mui-selected": {
+      backgroundColor: "#fff !important",
+      color: "#000",
+    },
+  },
+}));
+
+const Header = ({ headerRef }) => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [isRotate, setIsRotate] = useState(false);
+  const [changeMenuIcon, setChangeMenuIcon] = useState(null);
+  const [activeNav, setActiveNav] = useState("home");
+  const open = Boolean(anchorEl);
 
   useEffect(() => {
     const pathname = location.pathname === "/" ? "home" : location.pathname;
-    handleActiveNav(pathname);
+    setActiveNav(pathname);
   }, [location]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setChangeMenuIcon(() => !changeMenuIcon);
+    }, 600);
+  }, [isRotate]);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+    setIsRotate(false);
+  };
+
   return (
-    <div ref={headerRef} className={`header-main ${isSticky ? "sticky" : ""}`}>
+    <div ref={headerRef} className={`header-main`}>
+      <IconButton
+        id="basic-button"
+        className="header-main__iconContainer"
+        style={{
+          animation: isRotate
+            ? "rotateRight ease 0.5s"
+            : "rotateLeft ease 0.5s",
+        }}
+        onClick={(e) => {
+          setIsRotate(!isRotate);
+          changeMenuIcon ? handleClick(e) : handleClose();
+        }}
+      >
+        {changeMenuIcon || changeMenuIcon === null ? (
+          <MenuIcon htmlColor="#fff" style={{ fontSize: "1.2rem" }} />
+        ) : (
+          <Close htmlColor="#fff" style={{ fontSize: "1.2rem" }} />
+        )}
+      </IconButton>
+      <StyledMenu
+        id="demo-customized-menu"
+        MenuListProps={{
+          "aria-labelledby": "demo-customized-button",
+        }}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        {menuItem?.map((item, i) => (
+          <MenuItem
+            key={i}
+            selected={activeNav.includes(item.toLowerCase()) ? true : false}
+            onClick={() => {
+              handleClose();
+              navigate(item.toLowerCase());
+            }}
+            href={item}
+          >
+            {item}
+          </MenuItem>
+        ))}
+      </StyledMenu>
       <div className="header-main__textContainer">
         <div className="header-main__textContainer__text1">
           Dr. Letu Qingge Lab

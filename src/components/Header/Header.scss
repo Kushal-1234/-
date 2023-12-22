@@ -1,55 +1,61 @@
 .header-main {
-  padding: 0px;
-  transition: top 0.5s ease;
-  left: 0;
-  width: 100%;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  &.sticky {
-    position: fixed;
-    top: 0%;
-    left: 0;
+  height: 100%;
+  background-image: url(../../assets/images/bg3.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__iconContainer {
+    display: none !important;
+    z-index: 9999;
+    position: fixed !important;
+    top: 0;
     right: 0;
-    z-index: 100;
-    width: 100%;
-    background-image: url(../../assets/images/bg3.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    margin: 5px !important;
+    animation-fill-mode: forwards !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
   }
 
   &__textContainer {
+    height: 82%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     animation: fadeIn ease 10s;
     animation-fill-mode: forwards;
-    width: 100%;
-    padding: 1rem 0;
-    margin-bottom: 1rem;
+    background: rgba(0, 0, 0, 0.4);
+
     &__text1 {
-      font-size: 3.4rem;
+      font-size: 36px;
       font-weight: bolder;
       color: #fff;
       animation: leftToRight ease 5s;
       animation-fill-mode: forwards;
+      max-width: 70%;
     }
     &__text2 {
       font-weight: 500;
       color: #fff;
       animation: rightToLeft ease 5s;
       animation-fill-mode: forwards;
+      max-width: 70%;
     }
   }
 
   &__linksContainer {
     color: #fff;
-    z-index: 1;
+    height: 18%;
     width: 100%;
-    padding: 1rem 0;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    font-size: 1rem;
-    text-decoration: none !important;
+    align-items: center;
+    font-size: 14px;
     font-weight: 600;
     background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
     &__link {
       text-decoration: none;
       color: #000;
@@ -81,6 +87,42 @@
     }
     100% {
       opacity: 1;
+    }
+  }
+
+  @keyframes rotateRight {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotateLeft {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjustments for mobile devices */
+  .header-main {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    &__iconContainer {
+      display: block !important;
+    }
+    &__textContainer {
+      height: 100%;
+      &__text1 {
+        font-size: 24px;
+      }
+    }
+    &__linksContainer {
+      display: none;
     }
   }
 }
