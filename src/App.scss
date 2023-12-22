@@ -32,8 +32,12 @@ body {
     height: 75%;
     overflow: auto;
   }
-  &__headerContainerHome {
-    // height: auto;
-    // overflow: auto;
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjustments for mobile devices */
+  .app__headerContainerHome {
+    height: 25%;
+    overflow: auto;
   }
 }

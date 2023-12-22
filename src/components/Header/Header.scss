@@ -5,6 +5,8 @@
   background-size: cover;
   position: relative;
   &__home {
+    background-size: 100% 100%;
+    animation: zoomInOut ease 8s infinite alternate;
     &::before {
       content: "";
       position: absolute;
@@ -38,7 +40,7 @@
     animation-fill-mode: forwards;
     background: rgba(0, 0, 0, 0.4);
     &__home {
-      height: 95% !important;
+      height: 95%;
       justify-content: flex-end;
     }
     &__main {
@@ -89,6 +91,15 @@
     }
   }
 
+  @keyframes zoomInOut {
+    0% {
+      background-size: 105% 105%;
+    }
+    100% {
+      background-size: 100% 100%;
+    }
+  }
+
   @keyframes leftToRight {
     0% {
       transform: translateX(-100%);
@@ -136,13 +147,26 @@
   /* Adjustments for mobile devices */
   .header-main {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    &__home {
+      background-size: cover;
+      animation: none;
+      &::before {
+        background: none;
+      }
+    }
     &__iconContainer {
       display: block !important;
     }
+
     &__textContainer {
       height: 100%;
-      &__text1 {
-        font-size: 24px;
+      &__main {
+        &__text1 {
+          font-size: 24px;
+        }
+        &__text2 {
+          font-size: 12px;
+        }
       }
     }
     &__linksContainer {
