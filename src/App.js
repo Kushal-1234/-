@@ -42,7 +42,7 @@ function App() {
           }
         >
           <Routes>
-            <Route path={"/home"} element={<Home />}></Route>
+            <Route path={"/"} element={<Home />}></Route>
             <Route path={"/news"} element={<News />}></Route>
             <Route path={"/research"} element={<Research />}></Route>
             <Route path={"/publications"} element={<Publications />}></Route>
@@ -50,7 +50,7 @@ function App() {
             <Route path={"/teaching"} element={<Teaching />}></Route>
             <Route path={"/people"} element={<People />}></Route>
             <Route path={"/positions"} element={<Positions />}></Route>
-            <Route path="*" element={<Navigate to="/home" replace />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
       </div>
