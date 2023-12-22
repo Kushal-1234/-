@@ -1,6 +1,6 @@
 .teaching-main {
   position: relative;
-  width: 80%;
+  width: 90%;
   margin: 20px auto;
   &__title {
     font-size: 28px;
@@ -22,9 +22,11 @@
       display: flex;
       flex-direction: row;
       font-weight: 500;
-      width: fit-content;
+      justify-content: space-between;
+      width: 28%;
+      // width: fit-content;
       &__text {
-        margin-left: 2rem;
+        // margin-left: 2rem;
         padding: 0rem 1rem;
         background-color: lightblue;
         border-radius: 4px;
@@ -37,10 +39,25 @@
   }
 }
 
+@media screen and (max-width: 1324px) {
+  .teaching-main {
+    &__container {
+      &__card {
+        width: 40%;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   /* Adjustments for mobile devices */
   .teaching-main {
     width: 90%;
+    &__container {
+      &__card {
+        width: 60%;
+      }
+    }
     // padding: 5px 50px;
     &__title {
       font-size: 22px;
