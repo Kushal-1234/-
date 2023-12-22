@@ -58,7 +58,7 @@ const Header = ({ activeNav, setActiveNav }) => {
   const open = Boolean(anchorEl);
 
   useEffect(() => {
-    const pathname = location.pathname === "/" ? "home" : location.pathname;
+    const pathname = location.pathname === "/home" ? "home" : location.pathname;
     setActiveNav(pathname);
   }, [location]);
 
