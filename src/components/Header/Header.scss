@@ -1,21 +1,23 @@
 .header-main {
   height: 100%;
-  background-image: url(../../assets/images/bg3.jpeg);
+  // background-image: url(../../assets/images/bg3.jpeg);
+  background-image: url(https://rmf.imgix.net/img/hero-images/Projects/84/desktop/JimSink_Photography_14_copy.jpg?w=2400&q=60&auto=format,compress|https://rmf.imgix.net/img/hero-images/Projects/84/mobile/JimSink_Photography_14_copy.jpg?w=1000&q=60&auto=format,compress);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 240%;
   position: relative;
+  background-position: 100% 46%;
   &__home {
     background-size: 100% 100%;
     animation: zoomInOut ease 8s infinite alternate;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: linear-gradient(transparent 20%, rgb(0, 0, 0) 80%);
-    }
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   background: linear-gradient(transparent 20%, rgb(0, 0, 0) 80%);
+    // }
   }
   &__iconContainer {
     display: none !important;
@@ -25,7 +27,7 @@
     right: 0;
     margin: 5px !important;
     animation-fill-mode: forwards !important;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+    // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
   }
 
   &__textContainer {
@@ -38,7 +40,7 @@
     text-align: center;
     animation: fadeIn ease 10s;
     animation-fill-mode: forwards;
-    background: rgba(0, 0, 0, 0.4);
+    // background: rgba(0, 0, 0, 0.4);
     &__home {
       height: 95%;
       justify-content: flex-end;
@@ -52,6 +54,9 @@
         color: #fff;
         animation: leftToRight ease 5s;
         animation-fill-mode: forwards;
+        &__homeFont {
+          font-size: 50px;
+        }
       }
       &__text2 {
         font-size: 16px;
@@ -146,6 +151,8 @@
 @media screen and (max-width: 768px) {
   /* Adjustments for mobile devices */
   .header-main {
+    background-size: 100% 100%;
+    background-position: 100%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     &__home {
       background-size: cover;

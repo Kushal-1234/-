@@ -136,7 +136,13 @@ const Header = ({ activeNav, setActiveNav }) => {
           className="header-main__textContainer__main"
           style={{ marginBottom: activeNav === "home" ? "50px" : 0 }}
         >
-          <div className="header-main__textContainer__main__text1">
+          <div
+            className={
+              activeNav === "home"
+                ? "header-main__textContainer__main__text1 header-main__textContainer__main__text1__homeFont"
+                : "header-main__textContainer__main__text1"
+            }
+          >
             Dr. Letu Qingge Lab
           </div>
           <div className="header-main__textContainer__main__text2">

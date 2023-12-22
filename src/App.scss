@@ -23,13 +23,13 @@ body {
   overflow-x: hidden;
   position: relative;
   &__headerContainer {
-    height: 25%;
+    height: 30%;
   }
   &__headerContainerHome {
     height: 100%;
   }
   &__contentContainer {
-    height: 75%;
+    height: 70%;
     overflow: auto;
   }
 }
