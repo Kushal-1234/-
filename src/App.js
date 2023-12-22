@@ -1,7 +1,7 @@
 import "./App.scss";
 import Home from "./components/Home/Home";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Routes,
   Navigate,
