@@ -21,11 +21,19 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+  position: relative;
   &__headerContainer {
     height: 25%;
+  }
+  &__headerContainerHome {
+    height: 100%;
   }
   &__contentContainer {
     height: 75%;
     overflow: auto;
+  }
+  &__headerContainerHome {
+    // height: auto;
+    // overflow: auto;
   }
 }

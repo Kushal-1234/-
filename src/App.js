@@ -14,15 +14,33 @@ import Software from "./components/Software/Software";
 import Teaching from "./components/Teaching/Teaching";
 import People from "./components/People/People";
 import Positions from "./components/Positions/Positions";
+import { useState } from "react";
 
 function App() {
+  const [activeNav, setActiveNav] = useState("home");
+
   return (
     <Router>
       <div className="app">
-        <div className="app__headerContainer">
-          <Header />
+        <div
+          className={
+            activeNav === "home"
+              ? "app__headerContainerHome"
+              : "app__headerContainer"
+          }
+        >
+          <Header
+            activeNav={activeNav}
+            setActiveNav={(navItem) => setActiveNav(navItem)}
+          />
         </div>
-        <div className="app__contentContainer">
+        <div
+          className={
+            activeNav === "home"
+              ? "app__contentContainerHome"
+              : "app__contentContainer"
+          }
+        >
           <Routes>
             <Route path={"/"} element={<Home />}></Route>
             <Route path={"/news"} element={<News />}></Route>

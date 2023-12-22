@@ -3,6 +3,18 @@
   background-image: url(../../assets/images/bg3.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+  &__home {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(transparent 20%, rgb(0, 0, 0) 80%);
+    }
+  }
   &__iconContainer {
     display: none !important;
     z-index: 9999;
@@ -25,21 +37,27 @@
     animation: fadeIn ease 10s;
     animation-fill-mode: forwards;
     background: rgba(0, 0, 0, 0.4);
-
-    &__text1 {
-      font-size: 36px;
-      font-weight: bolder;
-      color: #fff;
-      animation: leftToRight ease 5s;
-      animation-fill-mode: forwards;
-      max-width: 70%;
+    &__home {
+      height: 95% !important;
+      justify-content: flex-end;
     }
-    &__text2 {
-      font-weight: 500;
-      color: #fff;
-      animation: rightToLeft ease 5s;
-      animation-fill-mode: forwards;
+    &__main {
       max-width: 70%;
+
+      &__text1 {
+        font-size: 40px;
+        font-weight: bolder;
+        color: #fff;
+        animation: leftToRight ease 5s;
+        animation-fill-mode: forwards;
+      }
+      &__text2 {
+        font-size: 16px;
+        font-weight: 500;
+        color: #fff;
+        animation: rightToLeft ease 5s;
+        animation-fill-mode: forwards;
+      }
     }
   }
 
@@ -55,6 +73,12 @@
     font-weight: 600;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    &__home {
+      height: 5% !important;
+      // margin-top: 5% !important;
+      position: relative;
+      z-index: 999;
+    }
 
     &__link {
       text-decoration: none;

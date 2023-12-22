@@ -49,13 +49,12 @@ const StyledMenu = styled((props) => (
   },
 }));
 
-const Header = ({ headerRef }) => {
+const Header = ({ activeNav, setActiveNav }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const [isRotate, setIsRotate] = useState(false);
   const [changeMenuIcon, setChangeMenuIcon] = useState(null);
-  const [activeNav, setActiveNav] = useState("home");
   const open = Boolean(anchorEl);
 
   useEffect(() => {
@@ -79,7 +78,11 @@ const Header = ({ headerRef }) => {
   };
 
   return (
-    <div ref={headerRef} className={`header-main`}>
+    <div
+      className={
+        activeNav === "home" ? "header-main header-main__home" : `header-main`
+      }
+    >
       <IconButton
         id="basic-button"
         className="header-main__iconContainer"
@@ -122,15 +125,32 @@ const Header = ({ headerRef }) => {
           </MenuItem>
         ))}
       </StyledMenu>
-      <div className="header-main__textContainer">
-        <div className="header-main__textContainer__text1">
-          Dr. Letu Qingge Lab
-        </div>
-        <div className="header-main__textContainer__text2">
-          Research Group at North Carolina A&T State University
+      <div
+        className={
+          activeNav === "home"
+            ? "header-main__textContainer header-main__textContainer__home"
+            : "header-main__textContainer"
+        }
+      >
+        <div
+          className="header-main__textContainer__main"
+          style={{ marginBottom: activeNav === "home" ? "50px" : 0 }}
+        >
+          <div className="header-main__textContainer__main__text1">
+            Dr. Letu Qingge Lab
+          </div>
+          <div className="header-main__textContainer__main__text2">
+            Research Group at North Carolina A&T State University
+          </div>
         </div>
       </div>
-      <div className="header-main__linksContainer">
+      <div
+        className={
+          activeNav === "home"
+            ? "header-main__linksContainer header-main__linksContainer__home"
+            : "header-main__linksContainer"
+        }
+      >
         <Link
           to="/"
           className={
