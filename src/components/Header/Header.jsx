@@ -6,7 +6,7 @@ import { Close } from "@mui/icons-material";
 import "./Header.scss";
 
 const menuItem = [
-  "Home",
+  "About",
   "News",
   "Research",
   "Publications",
@@ -58,7 +58,8 @@ const Header = ({ activeNav, setActiveNav }) => {
   const open = Boolean(anchorEl);
 
   useEffect(() => {
-    const pathname = location.pathname === "/" ? "home" : location.pathname;
+    const pathname =
+      location.pathname === "/about" ? "about" : location.pathname;
     setActiveNav(pathname);
   }, [location]);
 
@@ -80,7 +81,7 @@ const Header = ({ activeNav, setActiveNav }) => {
   return (
     <div
       className={
-        activeNav === "home" ? "header-main header-main__home" : `header-main`
+        activeNav === "about" ? "header-main header-main__home" : `header-main`
       }
     >
       <IconButton
@@ -127,18 +128,18 @@ const Header = ({ activeNav, setActiveNav }) => {
       </StyledMenu>
       <div
         className={
-          activeNav === "home"
+          activeNav === "about"
             ? "header-main__textContainer header-main__textContainer__home"
             : "header-main__textContainer"
         }
       >
         <div
           className="header-main__textContainer__main"
-          style={{ marginBottom: activeNav === "home" ? "50px" : 0 }}
+          style={{ marginBottom: activeNav === "about" ? "50px" : 0 }}
         >
           <div
             className={
-              activeNav === "home"
+              activeNav === "about"
                 ? "header-main__textContainer__main__text1 header-main__textContainer__main__text1__homeFont"
                 : "header-main__textContainer__main__text1"
             }
@@ -152,7 +153,7 @@ const Header = ({ activeNav, setActiveNav }) => {
       </div>
       <div
         className={
-          activeNav === "home"
+          activeNav === "about"
             ? "header-main__linksContainer header-main__linksContainer__home"
             : "header-main__linksContainer"
         }
@@ -161,16 +162,6 @@ const Header = ({ activeNav, setActiveNav }) => {
           to="/"
           className={
             location.pathname === "/"
-              ? "header-main__linksContainer__link header-main__linksContainer__activeLink"
-              : "header-main__linksContainer__link"
-          }
-        >
-          ABOUT
-        </Link>
-        <Link
-          to="/news"
-          className={
-            location.pathname === "/news"
               ? "header-main__linksContainer__link header-main__linksContainer__activeLink"
               : "header-main__linksContainer__link"
           }
@@ -236,6 +227,16 @@ const Header = ({ activeNav, setActiveNav }) => {
           }
         >
           POSITIONS
+        </Link>
+        <Link
+          to="/about"
+          className={
+            location.pathname === "/about"
+              ? "header-main__linksContainer__link header-main__linksContainer__activeLink"
+              : "header-main__linksContainer__link"
+          }
+        >
+          ABOUT
         </Link>
       </div>
     </div>

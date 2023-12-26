@@ -17,14 +17,14 @@ import Positions from "./components/Positions/Positions";
 import { useState } from "react";
 
 function App() {
-  const [activeNav, setActiveNav] = useState("home");
+  const [activeNav, setActiveNav] = useState("news");
 
   return (
     <Router>
       <div className="app">
         <div
           className={
-            activeNav === "home"
+            activeNav === "about"
               ? "app__headerContainerHome"
               : "app__headerContainer"
           }
@@ -36,14 +36,14 @@ function App() {
         </div>
         <div
           className={
-            activeNav === "home"
+            activeNav === "about"
               ? "app__contentContainerHome"
               : "app__contentContainer"
           }
         >
           <Routes>
-            <Route path={"/"} element={<Home />}></Route>
-            <Route path={"/news"} element={<News />}></Route>
+            <Route path={"/about"} element={<Home />}></Route>
+            <Route path={"/"} element={<News />}></Route>
             <Route path={"/research"} element={<Research />}></Route>
             <Route path={"/publications"} element={<Publications />}></Route>
             <Route path={"/software"} element={<Software />}></Route>
